@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">EjemploDevolverDatosActivity2024</string>
+    <string name="calculadora_de_propinas">Calculadora de Propinas</string>
+    <string name="importe">IMPORTE</string>
+    <string name="introduce_importe">Introduce importe</string>
+    <string name="simbolo_euro">€</string>
+    <string name="calcular_propina">CALCULAR PROPINA</string>
+    <string name="propina">Propina</string>
+    <string name="total_a_pagar">TOTAL A PAGAR</string>
+    <string name="importe_sin_propina">IMPORTE SIN PROPINA</string>
+    <string name="_15">15%</string>
+    <string name="_18">18%</string>
+    <string name="_20">20%</string>
+    <string name="que_porcentaje_de_propina_quieres_aniadir">¿Qué porcentaje de propina quieres añadir?</string>
+    <string name="cancelar">CANCELAR</string>
+    <string name="error_debes_introducir_un_importe">Error, debes introducir un importe</string>
+    <string name="debes_introducir_un_importe">Debes introducir un importe</string>
+</resources>
