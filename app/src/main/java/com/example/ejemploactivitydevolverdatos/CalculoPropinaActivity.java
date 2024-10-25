@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -17,8 +18,6 @@ public class CalculoPropinaActivity extends AppCompatActivity implements View.On
     TextView tvImporteRecibido;
     RadioGroup rgPorcentajesPropina;
     Button btCalcularPropina, btCancelar;
-
-
 
 
     @Override
@@ -59,6 +58,7 @@ public class CalculoPropinaActivity extends AppCompatActivity implements View.On
 
     /**
      * Método que se ejecuta al pulsar un botón
+     *
      * @param view
      */
     @Override
@@ -75,5 +75,27 @@ public class CalculoPropinaActivity extends AppCompatActivity implements View.On
 
 
         }
+    }
+
+    /**
+     * Método que calcula la propina según el porcentaje seleccionado
+     * en funcion del RadioButton elegido y devuelve un Bundle con la propina y el total a pagar.
+     *
+     * @param tvImporteRecibido
+     * @return
+     */
+    private Bundle calcularPropinaSegunPorcentajeSeleccionado(TextView tvImporteRecibido) {
+        int idRadioButtonSeleccionado = rgPorcentajesPropina.getCheckedRadioButtonId();
+        RadioButton rbElegido = findViewById(idRadioButtonSeleccionado);
+        String textoPorcentaje = rbElegido.getText().toString().split("%")[0];
+        double porcentaje = Double.parseDouble(textoPorcentaje);
+        double propina = (porcentaje / 100) * Double.parseDouble(tvImporteRecibido.getText().toString());
+        double total = propina + Double.parseDouble(tvImporteRecibido.getText().toString());
+
+        Bundle infoPropinaDevolver = new Bundle();
+        infoPropinaDevolver.putDouble("propina", propina);
+        infoPropinaDevolver.putDouble("total", total);
+        return infoPropinaDevolver;
+
     }
 }
