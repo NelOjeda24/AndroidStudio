@@ -27,8 +27,27 @@ public class FacturaActivity extends AppCompatActivity {
             new ActivityResultContracts.StartActivityForResult(),
             resultado -> {
                 // mostrar todos los datos que me vienen de la segunda pantalla en esta pantalla
+                if (resultado.getResultCode() == RESULT_OK) {
+                    Intent data = resultado.getData();
+                    actualizarUI (data);
+                }
             }
     );
+
+    private void actualizarUI(Intent data) {
+        if (data != null) {
+            if (data.hasExtra("propina")&& data.hasExtra("total")) {
+                {
+                    Bundle infoPropina = data.getExtras();
+                    double propina = infoPropina.getDouble("propina");
+                    double total = infoPropina.getDouble("total");
+                    tvPropina.setText(String.valueOf(propina));
+                    tvPropina2.setText(String.valueOf(total));
+                }
+                }
+            }
+
+    }
 
 
     @Override
