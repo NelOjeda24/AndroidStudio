@@ -48,7 +48,8 @@ public class CalculoPropinaActivity extends AppCompatActivity implements View.On
     /**
      * Método que inicializa los elementos de la vista
      */
-    private void initReferences() {
+    private
+    void initReferences() {
         tvImporteRecibido = findViewById(R.id.tvImporteSinPropina);
         rgPorcentajesPropina = findViewById(R.id.rgPorcentajesPropina);
         btCalcularPropina = findViewById(R.id.btCalcularPropinaPorcentaje);
